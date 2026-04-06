@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
+/* ── Brand Tokens ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ember: #110a06;
+  --smoke: #1e130b;
+  --char: #2c1c10;
+  --ash: #3f2a1a;
+  --amber: #e07a30;
+  --gold: #f0b429;
+  --cream: #f5ede0;
+  --warm-white: #fdf8f2;
+  --muted: #8a6e58;
+  --red-accent: #c0392b;
 }
 
+/* ── Tailwind Theme Registration ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ember: var(--ember);
+  --color-smoke: var(--smoke);
+  --color-char: var(--char);
+  --color-ash: var(--ash);
+  --color-amber: var(--amber);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-warm-white: var(--warm-white);
+  --color-muted: var(--muted);
+  --color-red-accent: var(--red-accent);
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Keyframes ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--ember);
+  color: var(--cream);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scroll-reveal helper ── */
+.reveal {
+  animation: fadeUp 0.8s ease both;
 }
