@@ -13,6 +13,8 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -20,10 +22,26 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: wire up to an email service or API route
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? "Something went wrong");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -105,11 +123,15 @@ export default function Contact() {
                 rows={5}
                 className={inputBase}
               />
+              {error && (
+                <p className="font-body text-red-accent text-sm">{error}</p>
+              )}
               <button
                 type="submit"
-                className="w-full bg-amber text-ember font-body font-semibold text-xs tracking-[0.25em] uppercase py-4 hover:bg-gold transition-colors duration-300"
+                disabled={loading}
+                className="w-full bg-amber text-ember font-body font-semibold text-xs tracking-[0.25em] uppercase py-4 hover:bg-gold transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Inquiry
+                {loading ? "Sending…" : "Send Inquiry"}
               </button>
             </form>
           )}
