@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Mama's BBQ — Filipino BBQ Pork Skewers | Orange County, CA",
   description:
-    "Mama's BBQ is an Orange County food truck serving legendary Filipino-style BBQ pork skewers, made from a family recipe passed down through generations. Find us at events across OC.",
+    "Mama's BBQ is an Orange County stand serving legendary Filipino-style BBQ pork skewers, made from Mama Jo Ito's secret family recipe brought from the Philippines. Find us at events across OC.",
 };
 
 export default function RootLayout({

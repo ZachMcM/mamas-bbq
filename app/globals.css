@@ -2,30 +2,28 @@
 
 /* ── Brand Tokens ── */
 :root {
-  --ember: #110a06;
-  --smoke: #1e130b;
-  --char: #2c1c10;
-  --ash: #3f2a1a;
-  --amber: #e07a30;
-  --gold: #f0b429;
-  --cream: #f5ede0;
-  --warm-white: #fdf8f2;
-  --muted: #8a6e58;
-  --red-accent: #c0392b;
+  --cream-bg: #FFFBF2;
+  --cream-card: #FFF5DC;
+  --sun: #FFD23F;
+  --mango: #FFB347;
+  --orange: #F26A1F;
+  --orange-hover: #D9560F;
+  --ink: #2A1A0E;
+  --ink-strong: #1A0F08;
+  --ink-muted: #7A6452;
 }
 
 /* ── Tailwind Theme Registration ── */
 @theme inline {
-  --color-ember: var(--ember);
-  --color-smoke: var(--smoke);
-  --color-char: var(--char);
-  --color-ash: var(--ash);
-  --color-amber: var(--amber);
-  --color-gold: var(--gold);
-  --color-cream: var(--cream);
-  --color-warm-white: var(--warm-white);
-  --color-muted: var(--muted);
-  --color-red-accent: var(--red-accent);
+  --color-cream-bg: var(--cream-bg);
+  --color-cream-card: var(--cream-card);
+  --color-sun: var(--sun);
+  --color-mango: var(--mango);
+  --color-orange: var(--orange);
+  --color-orange-hover: var(--orange-hover);
+  --color-ink: var(--ink);
+  --color-ink-strong: var(--ink-strong);
+  --color-ink-muted: var(--ink-muted);
 
   --font-display: var(--font-cormorant), Georgia, serif;
   --font-body: var(--font-dm-sans), system-ui, sans-serif;
@@ -55,8 +53,8 @@ html {
 }
 
 body {
-  background-color: var(--ember);
-  color: var(--cream);
+  background-color: var(--cream-bg);
+  color: var(--ink);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
