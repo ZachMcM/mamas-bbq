@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const BULLETS = [
   "Family recipe of traditional Filipino food Mama Jo Ito brought from the Philippines",
   "Pork, freshly chopped and sourced from a local butcher",
@@ -15,31 +13,8 @@ export default function AboutUs() {
           Our Story
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-start">
-          {/* Left: Image + pull quote */}
-          <div className="relative pb-10 pr-10">
-            <div className="relative aspect-[3/4] overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=85&auto=format&fit=crop"
-                alt="Mama Jo Ito at the grill"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Pull quote — overlaps bottom-right */}
-            <div className="absolute bottom-0 right-0 bg-orange p-6 max-w-[260px]">
-              <p className="font-display text-lg italic text-white leading-snug">
-                &ldquo;You need to sell these.&rdquo;
-              </p>
-              <p className="font-body text-xs tracking-widest uppercase text-white/70 mt-2">
-                — What everyone always said
-              </p>
-            </div>
-          </div>
-
-          {/* Right: Copy + bullets */}
-          <div className="lg:pt-4">
+        <div className="max-w-2xl mx-auto">
+          <div>
             <h2
               className="font-display italic text-ink-strong leading-tight mb-6"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}

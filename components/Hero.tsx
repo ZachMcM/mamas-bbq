@@ -53,8 +53,8 @@ export default function Hero() {
           style={{ animation: "fadeIn 1s 0.2s ease both" }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=1200&q=85&auto=format&fit=crop"
-            alt="Sizzling pork skewers on a charcoal grill"
+            src="/hero.jpeg"
+            alt="Mama's BBQ pork skewers"
             fill
             className="object-cover"
             priority

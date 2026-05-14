@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { id: "about", label: "Our Story" },
@@ -36,12 +37,18 @@ export default function Nav() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Brand name */}
+          {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-display text-2xl italic text-ink-strong hover:text-orange transition-colors"
+            className="hover:opacity-80 transition-opacity"
           >
-            Mama&apos;s <span className="not-italic text-orange">BBQ</span>
+            <Image
+              src="/mamaslogo.png"
+              alt="Mama's BBQ"
+              width={120}
+              height={48}
+              className="h-12 w-auto"
+            />
           </button>
 
           {/* Desktop links */}
@@ -96,9 +103,13 @@ export default function Nav() {
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <p className="font-display text-4xl italic text-ink-strong mb-2">
-          Mama&apos;s <span className="not-italic text-orange">BBQ</span>
-        </p>
+        <Image
+          src="/mamaslogo.png"
+          alt="Mama's BBQ"
+          width={160}
+          height={64}
+          className="h-16 w-auto mb-2"
+        />
         {NAV_LINKS.map(({ id, label }) => (
           <button
             key={id}
