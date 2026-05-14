@@ -117,8 +117,8 @@ export default function Contact() {
           {/* Contact details */}
           <div className="space-y-10">
             {[
-              { label: "Email", value: "hello@mamasbbq.com" },
-              { label: "Phone", value: "(714) 555-0182" },
+              { label: "Email", value: "nickhito05@gmail.com" },
+              { label: "Phone", value: "(562) 217-1245" },
             ].map(({ label, value }) => (
               <div key={label}>
                 <p className="font-body text-xs tracking-[0.3em] uppercase text-orange mb-2">
