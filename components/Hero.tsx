@@ -12,12 +12,12 @@ export default function Hero() {
 
         {/* Text content — second on mobile, first on desktop */}
         <div className="order-2 lg:order-1 flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 pb-16 pt-8 lg:py-20">
-          <p
+          {/* <p
             className="font-body text-orange text-xs tracking-[0.4em] uppercase mb-6"
             style={{ animation: "fadeUp 0.9s 0.3s ease both" }}
           >
             Orange County&apos;s Favorite Stand
-          </p>
+          </p> */}
 
           <h1
             className="font-display italic text-ink-strong leading-[0.9] mb-6"
