@@ -7,13 +7,6 @@ const QUICK_LINKS = [
   { id: "contact", label: "Book Us" },
 ];
 
-const LOCATIONS = [
-  "Irvine Farmers Market",
-  "Anaheim Night Market",
-  "Newport Beach Food Fest",
-  "Huntington Beach Pier Market",
-];
-
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -30,7 +23,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-ink-strong border-t border-white/10 py-16">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Brand */}
           <div>
             <p className="font-display italic text-white text-3xl mb-2">
@@ -58,20 +51,6 @@ export default function Footer() {
                 </button>
               ))}
             </nav>
-          </div>
-
-          {/* Locations */}
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-orange mb-5">
-              Locations
-            </p>
-            <ul className="space-y-2">
-              {LOCATIONS.map((loc) => (
-                <li key={loc} className="font-body text-sm text-white/60">
-                  {loc}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
